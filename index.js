@@ -27,9 +27,15 @@ var reconnect = function() {
 };
 
 client.on("chat_message", function(ev) {
-	if (ev.chat_message.message_content.segment  &&
+	if (ev.chat_message.message_content.segment &&
 		ev.self_event_state.user_id.gaia_id != ev.sender_id.gaia_id) {
 		chat.emit("message", ev, ev.chat_message.message_content.segment[0].text);
+	}
+});
+
+client.on("membership_change", function(ev) {
+	if (ev.membership_change.type == "JOIN" && ev.membership_change.participant_ids[0].gaia_id == ev.self_event_state.user_id.gaia_id) {
+		chat.emit("join", ev);
 	}
 });
 
