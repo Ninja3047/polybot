@@ -15,7 +15,7 @@ client.chat.on("message", function(ev, msg) {
 		};
 		giphy.search(query.str, function(err, res) {
 			if (res.data.length > 0 && !err) {
-				if(!query.index || !res.data[query.index]) query.index = Math.floor(Math.random() * res.data.length);
+				if((query.index === undefined) || !res.data[query.index]) query.index = Math.floor(Math.random() * res.data.length);
 				var gif = "https://media.giphy.com/media/" + res.data[query.index].id + "/giphy.gif";
 				imageSend(gif, ev);
 			} else {
