@@ -27,7 +27,7 @@ Command | Function
 `.a *` | show `*` ascii emote
 `.p *` | respond with `*` copypasta
 `.s *` | send a sticker matching `*` as the title. if the message is simply `.s`, a list of every sticker is returned
-`.gif *` | searches giphy for a random gif pertaining to `*`, and sends it
+`.gif ({i}) *` | searches giphy for a random gif pertaining to `*`, and sends it. `({i})` is optional, where `{i}` is the index of the gif `[1-*]`
 `.rainbow` | make the chat rainbow color
 `.celebration` | a party that simply cannot be stopped once started
 `.halloween` | a halloween celebration.
