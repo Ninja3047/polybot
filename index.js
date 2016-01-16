@@ -20,7 +20,7 @@ var creds = function() {
 	};
 };
 
-//client.loglevel('debug');
+//client.loglevel("debug");
 
 var reconnect = function() {
 	client.connect(creds).then(function() {});
